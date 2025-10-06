@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Carrito</title>
+</head>
+<body>
+    <header>
+        <h3>agoodshop</h3>
+    </header>
+    
+    <div id="container">
+        <div id="cart-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Cantidad</th>
+                        <th>Unidad</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Los elementos del carrito se agregaran aqui dinamicamente -->
+                </tbody>
+            </table>
+        </div>
+
+        <div id="cart-total">
+            <h2>Total</h2>
+            <div id="items-added">
+                <!--Los elementos del carrito se agregaran aqui dinamicamente y se sumara el precio en el total-->
+            </div>
+            <hr>
+            <p>
+                <span>TOTAL</span> <span id="total-price"></span>
+            </p>
+        </div>
+    </div>
+    <script src="./script.js" type="module"></script>
+</body>
+</html>
