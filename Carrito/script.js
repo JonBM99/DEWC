@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Función para actualizar el total
     function updateTotal() {
-        totalContainer.innerHTML = ""; // Limpiamos el contenedor del total
+        totalContainer.textContent = ""; // Limpiamos el contenedor del total
         
         const titleH2 = document.createElement("h2");
         titleH2.textContent = "Total";
