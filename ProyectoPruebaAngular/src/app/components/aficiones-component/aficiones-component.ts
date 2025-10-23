@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';//Para usar el Two wat data binding neceistamos importar FormsModule en el app.module.ts
-import { AficionInterface } from '../../interfaces/aficion-interface';
-                                            // Y usar ngModel en el html
+import { FormsModule } from '@angular/forms'; //Para usar el Two wat data binding neceistamos importar FormsModule en el app.module.ts y usar [(ngModel)] en el html
+import { AficionInterface } from '../../interfaces/aficion-interface'; //Importamos la interfaz creada
+                                            // 
 @Component({
   selector: 'app-aficiones-component',
   imports: [FormsModule],
