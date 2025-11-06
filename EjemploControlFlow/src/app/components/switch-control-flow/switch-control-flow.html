@@ -1,0 +1,37 @@
+<nav>
+  <ul class="menu">
+    @switch (role) {
+      @case('admin'){
+        <li>
+          <a href="">Crear nuevo</a>
+        </li>
+        <li>
+          <a href="">Ver listado</a>
+        </li>
+        <li>
+          <a href="">Crear usuarios</a>
+        </li>
+        <li>
+          <a href="">Borrar usuarios</a>
+        </li>
+      }
+      @case ('editor') {
+        <li>
+          <a href="">Crear nuevo</a>
+        </li>
+        <li>
+          <a href="">Ver listado</a>
+        </li>
+      }
+      @case ('suscriptor'){
+        <li>
+          <a href="">Ver listado</a>
+        </li>
+
+      }
+      @default {
+        <p>NO TIENES PERMISO PARA VER ESTE CONTENIDO</p>
+      }
+    }
+  </ul>
+</nav>
