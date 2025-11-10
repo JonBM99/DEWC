@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <!--Formulario para crear una nueva noticia-->
+    <div class="col-md-6">
+      <h3>Crear nueva noticia:</h3>
+      <input type="text" placeholder="Título de la noticia" [(ngModel)]="newPost.title" class="form-control mb-2">
+      <input type="url" placeholder="Url de la imagen" [(ngModel)]="newPost.image" class="form-control mb-2">
+      <textarea placeholder="Contenido de la noticia" [(ngModel)]="newPost.content" class="form-control mb-2"></textarea>
+      <input type="date" [(ngModel)]="newPost.date" class="form-control mb-2">
+
+      <button (click)="addPost()" class="btn btn-primary">Agregar Noticia</button>
+    </div>
+    <!--Lista de noticias-->
+    <div class="col-md-6">
+      <h3>Noticias</h3>
+
+      @for(posts of blogPosts; track posts.date; let i = $index){   <!--Utilizo el control flow con @for para iterar sobre el array de noticias que he creado-->
+        <div class="card mb-3">
+          <div class="card-body">
+            <h4>{{posts.title}}</h4>
+            <img [src]="posts.image" alt="Imagen de la noticia" class="img-fluid mb-2">
+            <p>{{posts.content}}</p>
+            <p class="text-muted">Publicado el: {{posts.date}}</p>
+          </div>
+        </div>
+      }
+      @empty{  <!--Utilizo el control flow con @empty para mostrar un mensaje si el array estuviera vacio-->
+        <h3>No hay noticias posteadas</h3> <!--Mensaje que se muestra si no hay noticias en el array-->
+      }
+    </div>
+  </div>
+</div>
