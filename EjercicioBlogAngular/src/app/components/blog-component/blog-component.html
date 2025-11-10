@@ -1,11 +1,11 @@
-<div class="container">
+<div class="container-fluid mt-4">
   <div class="row">
     <!--Formulario para crear una nueva noticia-->
     <div class="col-md-6">
       <h3>Crear nueva noticia:</h3>
       <input type="text" placeholder="Título de la noticia" [(ngModel)]="newPost.title" class="form-control mb-2">
       <input type="url" placeholder="Url de la imagen" [(ngModel)]="newPost.image" class="form-control mb-2">
-      <textarea placeholder="Contenido de la noticia" [(ngModel)]="newPost.content" class="form-control mb-2"></textarea>
+      <textarea placeholder="Contenido de la noticia" [(ngModel)]="newPost.content" class="form-control mb-2" rows="20"></textarea>
       <input type="date" [(ngModel)]="newPost.date" class="form-control mb-2">
 
       <button (click)="addPost()" class="btn btn-primary">Agregar Noticia</button>
@@ -25,7 +25,7 @@
         </div>
       }
       @empty{  <!--Utilizo el control flow con @empty para mostrar un mensaje si el array estuviera vacio-->
-        <h3>No hay noticias posteadas</h3> <!--Mensaje que se muestra si no hay noticias en el array-->
+        <h3>No hay noticias posteadas</h3>
       }
     </div>
   </div>
