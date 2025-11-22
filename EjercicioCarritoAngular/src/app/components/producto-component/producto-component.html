@@ -1,0 +1,13 @@
+<tr>
+  <td class="border text-center">
+    <h3>{{producto.title}}</h3>
+    <p>Ref: <span class="text-sm">{{producto.sku}}</span></p>
+  </td>
+  <td class="border text-center">
+    <button class="btn btn-danger btn-sm rounded-circle" id="restar"type="button" (click)="btnRestar()" [disabled]="this.cantidad===0">-</button>
+    <input type="text" value="{{this.cantidad}}" readonly>
+    <button class="btn btn-success btn-sm rounded-circle" type="button" (click)="btnSumar()">+</button>
+  </td>
+  <td class="border text-center">{{producto.price}}{{this.CarritoServices.getCurrency()}}</td>
+  <td class="border text-center">{{(producto.price*this.cantidad).toFixed(2)}}{{this.CarritoServices.getCurrency()}}</td>
+</tr>
