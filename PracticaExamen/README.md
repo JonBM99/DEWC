@@ -2,6 +2,16 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.7.
 
+## Node-modules install
+Before running the project, you need to install all the required dependencies. Make sure you have Node.js installed on your system (version 18.19 or higher is recommended for Angular 20).
+
+To install the project dependencies, run:
+
+```bash
+npm install
+```
+
+This command will read the package.json file and install all the dependencies listed in the node_modules folder.
 ## Development server
 
 To start a local development server, run:
