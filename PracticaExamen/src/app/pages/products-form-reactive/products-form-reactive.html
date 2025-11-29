@@ -1,0 +1,55 @@
+<section class="container">
+  <h1>Insertar nuevo producto a traves de Form Reactive</h1>
+  <hr>
+  <form [formGroup]="modelForm" class="card p-3 shadow" (ngSubmit)="getDataForm()">
+    <div class="my-2">
+      <label for="name" class="form-label mt-lg-3">Nombre</label>
+      <input type="text" class="form-control" name="name" id="name" placeholder="Introduce el nombre del producto" formControlName="name">
+      @if(checkControl('name', 'required')){
+        <p class="error">Campo requerido</p>
+      }
+      @if(checkControl('name', 'minlength')){
+        <p class="error">Longitud minima 3 caracteres</p>
+      }
+    </div>
+    <div class="my-2">
+      <label for="description" class="form-label mt-lg-3">Descripcion</label>
+      <input type="text" class="form-control" name="description" id="description" placeholder="Introduce la descripcion del producto"formControlName="description">
+      @if(checkControl('description', 'required')){
+        <p class="error">Campo requerido</p>
+      }
+      @if(checkControl('description', 'maxlength')){
+        <p class="error">Longitud maxima 280 caracteres</p>
+      }
+    </div>
+    <div class="my-2">
+      <label for="price" class="form-label mt-lg-3">Precio</label>
+      <input type="number" class="form-control" name="price" id="price" placeholder="Introduce el precio del producto"formControlName="price">
+      @if(checkControl('price', 'required')){
+        <p class="error">Campo requerido</p>
+      }
+      @if(checkControl('price', 'min') || checkControl('price','max')){
+        <p class="error">El precio tiene estar entre 0 y 1000</p>
+      }
+    </div>
+    <div class="my-2">
+      <label for="category" class="form-label mt-lg-3">Selecciona la categoria del producto</label>
+      <select name="category" id="category" class="form-control" formControlName="category">
+        <option value="mujer">Mujer</option>
+        <option value="hombre">Hombre</option>
+        <option value="niño">Niño</option>
+      </select>
+      @if(checkControl('category', 'required')){
+        <p class="error">Campo requerido</p>
+      }
+    </div>
+    <div class="my-2">
+      <label for="image" class="form-label mt-lg-3">Imagen</label>
+      <input type="text" class="form-control" name="image" id="image" placeholder="Introduce el link de la imagen del producto"formControlName="image">
+      @if(checkControl('image', 'required')){
+        <p class="error">Campo requerido</p>
+      }
+    </div>
+    <input type="submit" value="Enviar" class="btn btn-secondary mt-5" [disabled]="!modelForm.valid">
+  </form>
+</section>

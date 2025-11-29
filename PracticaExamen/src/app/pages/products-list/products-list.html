@@ -1,0 +1,12 @@
+<div class="row">
+  @for(product of productsArray; track product.id){
+    @if(product.active != false){ <!--Esto es por si hay un booleano que dice que no esta disponible o algo asi y pide mostrar solo los disponible-->
+    <article class="col-12 col-md-4 col-sm-3">
+      <app-product-card [miProduct]= "product"></app-product-card>
+    </article>
+    }
+  }
+  @empty {
+    <h2>No hay productos disponibles por el momento</h2>
+  }
+</div>

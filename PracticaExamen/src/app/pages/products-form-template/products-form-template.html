@@ -1,0 +1,32 @@
+<section class="container mt-3">
+  <form action="" class="shadow p-5" #miFormulario="ngForm"(ngSubmit)="getDataForm(miFormulario)">
+    <h1>Insertar nuevo producto a traves del forms template</h1>
+    <hr>
+    <div>
+      <label for="name" class="form-label mt-3">Nombre</label>
+      <input type="text" class="form-control" id="name" name="name" placeholder="Introduce el nombre del producto" ngModel>
+    </div>
+    <div>
+      <label for="description" class="form-label mt-3">Descripcion</label>
+      <input type="text" class="form-control" id="description" name="description" placeholder="Introduce la descripcion del producto" ngModel>
+    </div>
+    <div>
+      <label for="price" class="form-label mt-3">Precio</label>
+      <input type="number" class="form-control" id="price" name="price" placeholder="Introduce el precio del producto" ngModel>
+    </div>
+    <div>
+      <label for="category" class="form-label mt-3">Selecciona la categoria</label>
+      <select class="form-select" name="category" id="category" ngModel>
+        <option value="mujer">Mujer</option>
+        <option value="hombre">Hombre</option>
+        <option value="niño">Niño</option>
+      </select>
+    </div>
+    <div>
+      <label for="image" class="form-label mt-3">Imagen</label>
+      <input type="text" class="form-control" id="image" name="image" placeholder="Introduce el link a la imagen del producto" ngModel>
+    </div>
+    <input type="submit" value="Enviar" class="btn btn-danger mt-5">
+    <button class="btn btn-warning mt-5 mx-3" [routerLink]="['/products']">Volver</button>
+  </form>
+</section>

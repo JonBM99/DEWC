@@ -1,0 +1,20 @@
+<section>
+  <div class="card my-3 p-3 bg-secondary bg-opacity-25">
+    <div class="row g-0 h-100">
+      <div class="col-md-4 d-flex align-items-center">
+        <img [src]="miProduct.image" [alt]="miProduct.name"class="img-fluid rounded-start w-100">
+      </div>
+      <div class="col-md-8 d-flex flex-column justify-content-between">
+        <div class="card-body py-2">
+          <h5 class="card-title text-primary fw-bold">{{miProduct.name}}</h5>
+          <p class="text-muted mb-1">Categoría: {{miProduct.category}}</p>
+          <p class="text-success fw-semibold">Precio: {{miProduct.price}} €</p>
+        </div>
+        <div class="d-flex gap-3 ps-3 pb-2">
+          <button class="btn btn-warning px-4" (click)="seeDetails(miProduct)">Ver más</button>
+          <button class="btn btn-danger px-4" (click)="deleteProduct(miProduct)">Eliminar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
