@@ -1,0 +1,10 @@
+<div class="row">
+    @for(product of productsArray; track product.id){
+        <article class="col-12 col-md-4 col-sm-3">
+          <app-product-card [miProduct]="product"></app-product-card>
+        </article>
+    }
+    @empty {
+        <h2>No hay prodcutos disponibles en el momento</h2>
+    }
+</div>

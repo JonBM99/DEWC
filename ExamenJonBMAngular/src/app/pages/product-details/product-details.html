@@ -1,0 +1,22 @@
+<section class="container d-flex justify-content-center mt-5">
+  <div class="card p-3 shadow-sm border-0 bg-secondary bg-opacity-25">
+    <div class="row g-0 h-100">
+      <div class="col-md-4 d-flex align-items-center">
+        <img [src]="miProducto.image" [alt]="miProducto.name" class="img-fluid rounded-start w-100">
+      </div>
+      <div class="col-md-8 d-flex flex-column justify-content-between">
+        <div class="card-body py-2">
+          <h2 class="text-primary fw-bold mb-1">{{miProducto.name}}</h2>
+          <h5 class="text-muted fw-semibold mb-2">Categoria: {{miProducto.category}}</h5>
+          <p class="text-secondary mt-2">{{miProducto.description}}</p>
+          <h4 class="text-success fw-semibold mt-3">{{miProducto.price}} €</h4>
+          <p class="text-muted mt-3">Disponibilidad: {{miProducto.active}}</p>
+        </div>
+        <div class="text-end pb-2 pe-2">
+          <button class="btn btn-primary px-4 me-2" [routerLink]="['/products']">Volver</button>
+          <button class="btn btn-warning px-4" (click)="editProduct(miProducto)">Editar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
