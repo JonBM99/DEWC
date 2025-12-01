@@ -1,0 +1,31 @@
+<section>
+  <h1>Ejemplo Input en Angular</h1>
+  <hr />
+  <app-cuenta-atras-component
+    [deporte]="miDeporte"
+    [color]="arrayColores[0]"
+    (cuentaAtrasTerminada)="terminar($event)"
+    (cuentaAtrasComenzada)="comenzar($event)"
+  ></app-cuenta-atras-component>
+  <app-cuenta-atras-component
+    [deporte]="miDeporte2"
+    [color]="arrayColores[2]"
+    (cuentaAtrasTerminada)="terminar($event)"
+    (cuentaAtrasComenzada)="comenzar($event)"
+  ></app-cuenta-atras-component>
+  <app-cuenta-atras-component
+    [deporte]="miDeporte3"
+    [color]="arrayColores[3]"
+    (cuentaAtrasTerminada)="terminar($event)"
+    (cuentaAtrasComenzada)="comenzar($event)"
+  ></app-cuenta-atras-component>
+
+  <hr />
+  <br />
+  <div [style]="colorI">
+    <p>He Comenzado</p>
+  </div>
+  <div [style]="color">
+    <p>He terminado</p>
+  </div>
+</section>

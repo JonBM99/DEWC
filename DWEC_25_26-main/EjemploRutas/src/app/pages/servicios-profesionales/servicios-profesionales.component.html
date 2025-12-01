@@ -1,0 +1,14 @@
+<section class="container mt-3">
+    <h2>Nuestros servicios</h2>
+    <hr>
+    <div class="row g-3">
+        <!-- for -->
+        @for(servicioPro of arrServiciosPro; track servicioPro.id){
+        <article class="col-12 col-md-6 col-lg-4">
+            <app-servicios-profesionales-card [miServicioProfesional]="servicioPro"></app-servicios-profesionales-card>
+        </article>
+        } @empty {
+        <p>No disponemos de servicios en este momento</p>
+        }
+    </div>
+</section>

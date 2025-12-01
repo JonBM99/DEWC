@@ -1,0 +1,17 @@
+<section>
+  @if(edad >= 0 && edad < 18){
+  <p class="error">No puedes pasar !!!!</p>
+  <hr />
+  <hr />
+  <hr />
+  }@else if(edad >= 18){
+  <p class="acierto">Dime amigo y entra!!!!</p>
+  <hr />
+  <hr />
+
+  }@else {
+  <p class="error">Valor de edad incorrecto</p>
+  <hr />
+  <hr />
+  } <input type="number" name="edad" id="edad" (input)="cambiarEdad($event)" />
+</section>

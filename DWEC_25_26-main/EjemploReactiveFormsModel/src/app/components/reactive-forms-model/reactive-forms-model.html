@@ -1,0 +1,94 @@
+<section class="container">
+    <h1>Formulario del tipo FormsModel </h1>
+    <hr>
+
+    <form [formGroup]="modelForm" class="card p-3 shadow" (ngSubmit)="getDataForm()">
+        <div class="my-2">
+            <label for="nombre" class="form-label mt-lg-3">Nombre</label>
+            <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Introduce tu nombre"
+                formControlName="nombre">
+            @if(checkControl('nombre','required')){
+            <p class="error">Campo requerido</p>
+            }
+
+            @if(checkControl('nombre','minlength')){
+            <p class="error">Longitud minima 3 caracteres</p>
+            }
+        </div>
+
+        <div class="my-2">
+            <label for="email" class="form-label mt-lg-3">Email</label>
+            <input type="text" class="form-control" name="email" id="email" placeholder="Introduce tu email"
+                formControlName="email">
+            @if(checkControl('email','required')){
+            <p class="error">Campo requerido</p>
+            }
+
+            @if(checkControl('email','pattern')){
+            <p class="error">El email no tiene el formato correcto</p>
+            }
+        </div>
+
+        <div class="my-2">
+            <label for="edad" class="form-label mt-lg-3">Edad</label>
+            <input type="number" class="form-control" name="edad" id="edad" placeholder="Introduce tu edad"
+                formControlName="edad">
+            @if(checkControl('edad','required')){
+            <p class="error">Campo requerido</p>
+            }
+
+            @if(checkControl('edad','min') || checkControl('edad','max')){
+            <p class="error">Rango de edad incorreto</p>
+            }
+        </div>
+
+        <div class="my-2">
+            <label for="dni" class="form-label mt-lg-3">DNI</label>
+            <input type="text" class="form-control" name="dni" id="dni" placeholder="Introduce tu dni"
+                formControlName="dni">
+            @if(checkControl('dni','required')){
+            <p class="error">Campo requerido</p>
+            }
+
+            @if(checkControl('dni','pattern')){
+            <p class="error">No cumple el formato de DNI</p>
+            }
+        </div>
+
+        <div class="my-2">
+            <label for="password" class="form-label mt-lg-3">Contraseña</label>
+            <input type="password" class="form-control" name="password" id="password"
+                placeholder="Introduce tu password" formControlName="password">
+            @if(checkControl('password','required')){
+            <p class="error">Campo requerido</p>
+            }
+
+            @if(checkControl('password','minlength')){
+            <p class="error">La contraseña debe de tener al menos 5 caracteres</p>
+            }
+
+            @if(modelForm.hasError('passwordnotmatches')){
+            <p class="error">Las contraseñas no coinciden</p>
+            }
+        </div>
+
+        <div class="my-2">
+            <label for="repitePassword" class="form-label mt-lg-3">Contraseña</label>
+            <input type="password" class="form-control" name="repitePassword" id="repitePassword"
+                placeholder="Introduce tu password" formControlName="repitePassword">
+            @if(checkControl('repitePassword','required')){
+            <p class="error">Campo requerido</p>
+            }
+
+            @if(checkControl('repitePassword','minlength')){
+            <p class="error">La contraseña debe de tener al menos 5 caracteres</p>
+            }
+
+            @if(modelForm.hasError('passwordnotmatches')){
+            <p class="error">Las contraseñas no coinciden</p>
+            }
+        </div>
+
+        <input type="submit" value="Enviar" class="btn btn-secondary mt-5" [disabled]="!modelForm.valid">
+    </form>
+</section>

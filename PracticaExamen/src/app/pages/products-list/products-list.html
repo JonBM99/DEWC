@@ -14,13 +14,13 @@
 <div class="container">
   <h1>Filtro por categoria</h1>
   <div class="mt-5 mb-4 d-flex gap-2">
-    <button class="btn btn-primary" (click)="filterCategory=''">Todas las categorias</button>
-    <button class="btn btn-outline-primary" (click)="filterCategory='mujer'">Mujer</button>
-    <button class="btn btn-outline-primary" (click)="filterCategory='hombre'">Hombre</button>
-    <button class="btn btn-outline-primary" (click)="filterCategory='niño'">Niño</button>
+    <button class="btn btn-primary" (click)="filterCategory='';productsFiltered()">Todas las categorias</button>
+    <button class="btn btn-outline-primary" (click)="filterCategory='mujer'; productsFiltered()">Mujer</button>
+    <button class="btn btn-outline-primary" (click)="filterCategory='hombre'; productsFiltered()">Hombre</button>
+    <button class="btn btn-outline-primary" (click)="filterCategory='niño'; productsFiltered()">Niño</button>
   </div>
   <div class="row mt-4 mb-5">
-    @for(product of productsFiltered; track product.id){
+    @for(product of filteredProducts; track product.id){
       @if(product.active != false){
         <article class="col-12 col-md-4 col-sm-3">
           <app-product-card [miProduct]= "product"></app-product-card>

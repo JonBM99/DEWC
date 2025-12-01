@@ -1,0 +1,33 @@
+<section class="container m-5">
+  <header>
+    <h1 class="bg-dark text-white text-center py-3">App Series with Fecth</h1>
+    <hr>
+  </header>
+
+  <main>
+    <div class="row my-5">
+
+      <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+              aria-expanded="true" aria-controls="collapseOne">
+              Insertar nueva serie
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <app-serie-form></app-serie-form>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <hr>
+    <app-series-list></app-series-list>
+  </main>
+
+  <footer class="bg-black text-white text-center py-3">@Series 2025</footer>
+</section>

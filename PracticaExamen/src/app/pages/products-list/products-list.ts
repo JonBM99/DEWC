@@ -1,4 +1,3 @@
-
 import { Iproduct } from '../../interfaces/iproduct';
 import { ProductsService } from '../../services/products-service';
 import { ProductCard } from "../../components/product-card/product-card";
@@ -15,20 +14,22 @@ export class ProductsList {
   productsArray: Iproduct[];
   productsservice = inject(ProductsService);
   filterCategory: string; //creo variable para guardar la categoria para filtrar
+  filteredProducts: Iproduct[]; //creo array donde guardar los productos filtrados
 
   constructor(){
     this.productsArray = [];
-    this.filterCategory = ''; //inicializo la categoria
+    this.filterCategory = '';
+    this.filteredProducts = [];
   }
   ngOnInit(): void{
     this.productsArray = this.productsservice.getAllproducts();
   }
 
-  get productsFiltered():Iproduct[]{ //getter que devuelve los productos filtrados segun la categoria
+  productsFiltered():Iproduct[]{
     if(!this.filterCategory){ //si no hay filtro seleccionado devuelve todos
-      return this.productsArray;
+      return this.filteredProducts = this.productsArray;
+    } else {
+    return this.filteredProducts = this.productsArray.filter(p => p.category === this.filterCategory); // si hay filtro devuelve solo los de la categoria filtrada
     }
-    return this.productsArray.filter(p => p.category === this.filterCategory); // si hay filtro devuelve solo los de la categoria filtrada
   }
-
 }
