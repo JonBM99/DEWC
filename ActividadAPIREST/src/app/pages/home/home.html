@@ -1,7 +1,7 @@
 <div class="row">
-  @for(user of usersArray; track user.id){
+  @for(usuario of usersArray; track usuario.id){
     <article class="col-12 col-md-6 col-sm-3">
-      <app-user-card [miUser]="user"></app-user-card>
+      <app-user-card [miUser]="usuario"></app-user-card>
     </article>
   }
 </div>

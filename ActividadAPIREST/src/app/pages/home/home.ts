@@ -21,7 +21,6 @@ export class Home {
     async ngOnInit(): Promise<void> {
       try{
         this.usersArray = await this.userServices.getAllUsers();
-        console.log(this.usersArray);
       }catch(error){
         console.error('No se han podido obtener los usuarios:', error);
       }

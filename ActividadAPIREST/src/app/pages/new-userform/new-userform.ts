@@ -4,6 +4,7 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { ActivatedRoute, Router } from '@angular/router';
 import { IUser } from '../../interfaces/iuser';
 import {v4 as uuidv4} from 'uuid';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -39,11 +40,19 @@ export class NewUserform {
     if(this.isNew){
       user._id = uuidv4();
       this.userServices.insertUser(user);
-      alert("Se ha creado correctamente el usuario");
+      Swal.fire({
+        title: "Añadido correctamente",
+        text: "Se ha creado correctamente el usuario",
+        icon: "success"
+      });
     }
     else{
       this.userServices.updateUser(user);
-      alert("Se ha editado correctamente el usuario");
+      Swal.fire({
+        title: "Editado correctamente",
+        text: "Se ha editado correctamente el usuario",
+        icon: "success"
+      });
     }
     this.router.navigate(['home']);
   }
@@ -70,7 +79,11 @@ export class NewUserform {
             password: new FormControl(user.password,[Validators.required, Validators.minLength(8)])
           },[]);
         } else{
-          alert("No se encuentra el usuario en nuestro servicio")
+          Swal.fire({
+            title: "Desconocido",
+            text: "No se encuentra el usuario en nuestro servicio",
+            icon: "error"
+          });
         }
       }
     })
