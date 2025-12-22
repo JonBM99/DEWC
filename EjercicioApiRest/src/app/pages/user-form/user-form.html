@@ -1,0 +1,46 @@
+<section class="container my-3">
+  @if (isNew) {
+    <h1 class="text-center mb-4">Insertar nuevo usuario</h1>
+  }
+  @else {
+    <h1 class="text-center mb-4">Editar usuario</h1>
+  }
+  <hr>
+  <form [formGroup]="newUserForm" class="card p-3" (ngSubmit)="getDataForm()">
+
+    <div class="my-2">
+      <label for="first_name" class="form-label mt-lg-3">Nombre</label>
+      <input type="text" class="form-control" name="first_name" id="first_name" placeholder="Introduce el nombre" formControlName="first_name">
+    </div>
+
+    <div class="my-2">
+      <label for="last_name" class="form-label mt-lg-3">Apellido</label>
+      <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Introduce el apellido" formControlName="last_name">
+    </div>
+
+    <div class="my-2">
+      <label for="username" class="form-label mt-lg-3">Username</label>
+      <input type="text" class="form-control" name="username" id="username" placeholder="Introduce el usuario" formControlName="username">
+    </div>
+
+    <div class="my-2">
+      <label for="email" class="form-label mt-lg-3">Email</label>
+      <input type="text" class="form-control" name="email" id="email" placeholder="Introduce el email" formControlName="email">
+    </div>
+
+    <div class="my-2">
+      <label for="image" class="form-label mt-lg-3">Foto</label>
+      <input type="text" class="form-control" name="image" id="image" placeholder="Introduce el link a la foto" formControlName="image">
+    </div>
+
+    <div class="my-2">
+      <label for="password" class="form-label mt-lg-3">Contraseña</label>
+      <input type="text" class="form-control" name="password" id="password" placeholder="Introduce la contraseña" formControlName="password">
+    </div>
+
+    <div class="d-flex justify-content-center gap-3">
+      <button type="submit" value="Guardar" class="btn btn-success mt-5" [disabled]="!newUserForm.valid && isNew">Guardar</button>
+      <button class="btn btn-secondary mt-5"[routerLink]="['/home']">Cancelar</button>
+    </div>
+  </form>
+</section>

@@ -1,0 +1,52 @@
+.navbar {
+  background-color: #f0f0f0;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.navbar-brand {
+  color: #333;
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.navbar-brand:hover {
+  background-color: #333;
+  color: #f0f0f0;
+}
+
+.nav-link {
+  color: #555;
+  font-weight: 500;
+  padding: 0.65rem 1.2rem;
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.nav-link:hover {
+  background-color: #333;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.nav-link.active {
+  background-color: #333;
+  color: #fff;
+}
+
+.navbar-toggler { /* Estilo de burger button */
+  border: none;
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+.navbar-toggler:hover {
+  background-color: #333;
+}
