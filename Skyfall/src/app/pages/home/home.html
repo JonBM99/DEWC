@@ -1,0 +1,42 @@
+<section class="landing-page bg-dark text-white">
+  <article class="hero-section bg-dark text-white text-center py-5">
+    <div class="container">
+      <h1 class="display-4 fw-bold mb-3">Bienvenido a Skyfall</h1>
+      <p class="lead mb-4">Descubre nuestros productos</p>
+      <a class="btn btn-light" [routerLink]="['/login']">Comenzar Ahora</a>
+    </div>
+  </article>
+  <article>
+    <div class="container py-5">
+      <div class="row text-center">
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Tu cuenta</h5>
+              <p class="card-text">Gestiona tu perfil y accede a tus configuraciones personales.</p>
+              <a class="btn btn-dark" [routerLink]="['/login']">Acceder</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Nuestros productos</h5>
+              <p class="card-text">Echa un vistazo a nuestros productos.</p>
+              <a class="btn btn-dark" [routerLink]="['/products']">Ver mas</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Work In Progress</h5>
+              <p class="card-text">Work In Progress </p>
+              <a class="btn btn-dark">WIP</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+</section>

@@ -1,0 +1,19 @@
+<section class="container mt-5 align-items-center d-flex justify-content-center">
+  <div class="card shadow-sm border rounded" style="width: fit-content;">
+    <div class="row g-2 align-items-center">
+      <div class="col-md-4 text-center p-4">
+        <img [src]="product.thumbnail" class="img-fluid rounded" alt="Imagen de {{product.title}}" style="width: 200px; height: 200px; object-fit: cover;">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h3 class="card-title">{{product.title}}</h3>
+          <p class="card-text"><strong>Price:</strong> ${{product.price}}</p>
+          <p class="card-text"><strong>Description:</strong> {{product.description}}</p>
+          <div class="d-flex justify-content-around mt-4">
+            <a [routerLink]="['/products']"><i class="bi bi-arrow-left"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
