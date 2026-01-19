@@ -7,11 +7,13 @@
               <strong>Username: </strong>{{employee.username}}<br>
             </p>
             <div class="d-flex justify-content-around mt-4">
+              @if(isAdmin()){
                 <a [routerLink]="['/employee-view', employee._id]"><i class="bi bi-search"></i></a>
                 <a [routerLink]="['/employee-form', employee._id]"><i class="bi bi-pencil-square"></i></a>
                 <a (click)="deleteEmployee(employee)" style="cursor: pointer;">
                   <i class="bi bi-trash"></i>
                 </a>
+                }
             </div>
         </div>
     </div>

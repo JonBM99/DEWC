@@ -12,6 +12,7 @@ import { RouterLink } from "@angular/router";
 })
 export class EmployeesCard {
 
+
   employeesServices = inject(EmployeesServices);
   @Input() employee!: Iemployee;
   @Output() employeeDeleted = new EventEmitter<string>();
@@ -45,4 +46,13 @@ export class EmployeesCard {
       }
     }
   }
+
+  isAdmin() { //con esto puedo hacer que no salgan las opciones de eliminar ver mas y editar si no fuera admin, en este caso female
+    const role = localStorage.getItem('role');
+    if(role === 'female'){
+      return true;
+    }
+    return false;
+  }
+
 }
