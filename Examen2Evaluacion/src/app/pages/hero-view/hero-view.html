@@ -1,0 +1,39 @@
+<section class="container mt-5 align-items-center d-flex justify-content-center">
+  <div class="card shadow-sm border rounded" style="width: fit-content;">
+    <div class="row g-2 align-items-center">
+      <div id="carouselExample" class="carousel slide">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img [src]="heroe.image1" class="img-fluid rounded" alt="Imagen de {{heroe.heroname}}">
+          </div>
+          <div class="carousel-item">
+            <img [src]="heroe.image2" class="img-fluid rounded" alt="Imagen 2 de {{heroe.heroname}}">
+          </div>
+          <div class="carousel-item">
+            <img [src]="heroe.image3" class="img-fluid rounded" alt="Imagen 3 de {{heroe.heroname}}">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Siguiente</span>
+        </button>
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h3 class="card-title">{{heroe.heroname}}</h3>
+          <p class="card-text"><strong>Nombre real:</strong> {{heroe.fullname}}</p>
+          <div class="d-flex justify-content-around mt-4">
+            <a [routerLink]="['/heroes']"><i class="bi bi-arrow-left"></i></a>
+            <a [routerLink]="['/heroes-form', heroe.id]"><i class="bi bi-pencil-square"></i></a>
+            <a (click)="deleteHeroe(heroe)" style="cursor: pointer;">
+                  <i class="bi bi-trash"></i>
+                </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

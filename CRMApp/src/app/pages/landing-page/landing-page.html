@@ -1,0 +1,40 @@
+<nav class="lp-navbar">
+  <div class="container">
+    <div class="brand">Mi CRM</div>
+    <div class="nav-actions">
+      <a [routerLink]="['/login']" class="btn btn-primary" aria-label="Iniciar sesión">Iniciar sesión</a>
+    </div>
+  </div>
+</nav>
+
+<header class="lp-hero">
+  <div class="container hero-inner">
+    <h1>Gestiona tus clientes con facilidad</h1>
+    <p>Centraliza contactos, seguimiento y ventas en una sola plataforma sencilla e intuitiva.</p>
+  </div>
+</header>
+
+<main class="container lp-cards">
+  <section class="cards-grid" aria-label="Características principales">
+    <article class="card">
+      <div class="card-icon">📇</div>
+      <h3>Empleados</h3>
+      <p>Mantén toda la información de tus clientes organizada y accesible.</p>
+      <a class="card-btn" routerLink="/features/contacts">Más info</a>
+    </article>
+
+    <article class="card">
+      <div class="card-icon">📈</div>
+      <h3>Productos</h3>
+      <p>Analiza el rendimiento con reportes claros y personalizables.</p>
+      <a class="card-btn" routerLink="/features/reports">Más info</a>
+    </article>
+
+    <article class="card">
+      <div class="card-icon">🔔</div>
+      <h3>Recordatorios</h3>
+      <p>No pierdas oportunidades con avisos y tareas automáticas.</p>
+      <a class="card-btn" routerLink="/features/notifications">Más info</a>
+    </article>
+  </section>
+</main>

@@ -1,0 +1,19 @@
+:host { display: block; font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; color: #222; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 1rem; }
+  .lp-navbar { background: #fff; border-bottom: 1px solid #e6e6e6; }
+  .lp-navbar .container { display:flex; align-items:center; justify-content:space-between; padding:0.75rem 0; }
+  .brand { font-weight:700; font-size:1.125rem; }
+  .btn { display:inline-block; padding:0.5rem 0.9rem; border-radius:6px; text-decoration:none; border:1px solid transparent; }
+  .btn-primary { background:#0d6efd; color:#fff; }
+  .btn-cta { background:#198754; color:#fff; margin-top:1rem; display:inline-block; }
+  .lp-hero { background: linear-gradient(90deg,#f8fbff,#ffffff); padding:3.5rem 0; text-align:left; }
+  .hero-inner h1 { margin:0 0 0.5rem; font-size:2rem; }
+  .hero-inner p { margin:0 0 1rem; color:#555; }
+  .lp-cards { padding:2.5rem 0; }
+  .cards-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem; align-items:stretch; }
+  .card { background:#fff; padding:1.25rem; border-radius:8px; box-shadow:0 2px 8px rgba(20,20,30,0.04); display:flex; flex-direction:column; gap:0.75rem; }
+  .card-icon { font-size:1.75rem; }
+  .card h3 { margin:0; font-size:1.05rem; }
+  .card p { margin:0; color:#555; flex:1; }
+  .card-btn { margin-top:0.5rem; color:#0d6efd; text-decoration:none; font-weight:600; }
+  @media (max-width:600px){ .hero-inner h1{font-size:1.5rem;} .lp-hero{padding:2rem 0;} }

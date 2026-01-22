@@ -1,0 +1,17 @@
+<section class="container mt-3">
+  <form action="" class="shadow p-5" #loginForm="ngForm"(ngSubmit)="getLogin(loginForm)">
+    <h1>CRM Log In</h1>
+    <hr>
+    <div>
+      <label for="username" class="form-label mt-3">Username</label>
+      <input type="text" class="form-control" id="username" name="username" placeholder="Introduce el nombre de usuario" ngModel>
+    </div>
+    <div>
+      <label for="password" class="form-label mt-3">Password</label>
+      <input type="password" class="form-control" id="password" name="password" placeholder="Introduce la contraseña" ngModel>
+    </div>
+
+    <input type="submit" value="Log In" class="btn btn-danger mt-5">
+    <button class="btn btn-warning mt-5 mx-3" [routerLink]="['/inicio']">Volver</button>
+  </form>
+</section>

@@ -1,0 +1,34 @@
+services:
+    db:
+        image: mysql:8.0
+        environment:
+            MYSQL_ROOT_PASSWORD: daw12
+            MYSQL_DATABASE: toDoList
+        ports:
+            - "3307:3306"
+        volumes:
+            - db_data:/var/lib/mysql
+            - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+        command: --default-authentication-plugin=mysql_native_password
+
+    backend:
+        build: ./backend
+        ports:
+            - "5000:5000"
+        environment:
+            DB_HOST: db
+            DB_USER: root
+            DB_PASS: daw12
+            DB_NAME: toDoList
+        depends_on:
+            - db
+
+    frontend:
+        build: ./frontend
+        ports:
+            - "3000:3000"
+        depends_on:
+            - backend
+
+volumes:
+    db_data:

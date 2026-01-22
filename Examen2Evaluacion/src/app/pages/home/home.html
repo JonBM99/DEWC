@@ -1,0 +1,43 @@
+<section class="landing-page bg-dark text-white min-vh-100">
+  <article class="hero-section bg-dark text-white text-center py-5">
+    <div class="container">
+      <h1 class="display-4 fw-bold mb-3">Bienvenido al DC Universe</h1>
+      <p class="lead mb-4">Una app dedicada al maravilloso universo de DC</p>
+    </div>
+  </article>
+  <article>
+    <div class="container py-5">
+      <div class="row text-center">
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Iniciar sesion</h5>
+              <p class="card-text">Accede a nuestro servidor para realizar actualizaciones o cambios en la base de datos</p>
+              <a class="btn btn-dark"[routerLink]="['/login']">Iniciar sesion</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Heroes</h5>
+              <p class="card-text">Echa un vistazo a los superheroes y villanos de nuestra base de datos</p>
+              <a class="btn btn-dark"[routerLink]="['/heroes']">Ver mas</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Añadir un personaje nuevo</h5>
+              <p class="card-text">Crea un personaje que quieras añadir a nuestra base de datos</p>
+              <a class="btn btn-dark"[routerLink]="['/heroes-form']">Crear</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+</section>
