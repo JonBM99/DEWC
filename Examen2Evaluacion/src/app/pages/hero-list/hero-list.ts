@@ -37,6 +37,7 @@ export class HeroList {
     }finally{
       this.loading = false;
     }
+    console.log('Heroes cargados: ', this.arrayHeroes);
   }
 
   async ngOnInit(): Promise<void>{

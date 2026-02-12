@@ -9,7 +9,7 @@ import { lastValueFrom } from 'rxjs';
 })
 export class HeroServices {
 
-  private baseUrl: string = 'http://localhost:8080/api/characters';
+  private baseUrl: string = 'http://localhost:8081/api/characters';
   private httpClient = inject(HttpClient);
 
   constructor(){}

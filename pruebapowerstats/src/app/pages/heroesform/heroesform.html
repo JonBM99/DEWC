@@ -1,0 +1,188 @@
+
+<section class="container my-3">
+  @if (isNew) {
+    <h1 class="text-center mb-4">Add new character</h1>
+  }
+  @else {
+    <h1 class="text-center mb-4">Edit character</h1>
+  }
+  <hr>
+  <form [formGroup]="newCharacterForm" class="card p-3" (ngSubmit)="getDataForm()">
+
+    <!-- Basic Information -->
+    <h3 class="mt-3 mb-3">Basic Information</h3>
+
+    <div class="my-2">
+      <label for="name" class="form-label mt-lg-3">Hero Name *</label>
+      <input type="text" class="form-control" name="name" id="name"
+             placeholder="Hero name" formControlName="name">
+    </div>
+
+    <div class="my-2">
+      <label for="fullName" class="form-label mt-lg-3">Full Name</label>
+      <input type="text" class="form-control" name="fullName" id="fullName"
+             placeholder="Full name" formControlName="fullName">
+    </div>
+
+    <div class="my-2">
+      <label for="alterEgos" class="form-label mt-lg-3">Alter Egos</label>
+      <input type="text" class="form-control" name="alterEgos" id="alterEgos"
+             placeholder="Alter egos" formControlName="alterEgos">
+    </div>
+
+    <div class="my-2">
+      <label for="publisher" class="form-label mt-lg-3">Publisher</label>
+      <input type="text" class="form-control" name="publisher" id="publisher"
+             placeholder="Publisher" formControlName="publisher">
+    </div>
+
+    <div class="my-2">
+      <label for="alignment" class="form-label mt-lg-3">Alignment *</label>
+      <select class="form-control" name="alignment" id="alignment" formControlName="alignment">
+        <option value="">Select alignment</option>
+        <option value="HERO">Hero</option>
+        <option value="VILLAIN">Villain</option>
+        <option value="ANTI_HERO">Anti-Hero</option>
+        <option value="NEUTRAL">Neutral</option>
+      </select>
+    </div>
+
+    <!-- Physical Characteristics -->
+    <h3 class="mt-4 mb-3">Physical Characteristics</h3>
+
+    <div class="row">
+      <div class="col-md-6 my-2">
+        <label for="gender" class="form-label mt-lg-3">Gender</label>
+        <select class="form-control" name="gender" id="gender" formControlName="gender">
+          <option value="">Select gender</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <div class="col-md-6 my-2">
+        <label for="race" class="form-label mt-lg-3">Race</label>
+        <input type="text" class="form-control" name="race" id="race"
+               placeholder="Race" formControlName="race">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 my-2">
+        <label for="height" class="form-label mt-lg-3">Height</label>
+        <input type="text" class="form-control" name="height" id="height"
+               placeholder="Height (e.g., 6'2'')" formControlName="height">
+      </div>
+
+      <div class="col-md-6 my-2">
+        <label for="weight" class="form-label mt-lg-3">Weight</label>
+        <input type="text" class="form-control" name="weight" id="weight"
+               placeholder="Weight (e.g., 220 lbs)" formControlName="weight">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 my-2">
+        <label for="eyeColor" class="form-label mt-lg-3">Eye Color</label>
+        <input type="text" class="form-control" name="eyeColor" id="eyeColor"
+               placeholder="Eye color" formControlName="eyeColor">
+      </div>
+
+      <div class="col-md-6 my-2">
+        <label for="hairColor" class="form-label mt-lg-3">Hair Color</label>
+        <input type="text" class="form-control" name="hairColor" id="hairColor"
+               placeholder="Hair color" formControlName="hairColor">
+      </div>
+    </div>
+
+    <!-- Background -->
+    <h3 class="mt-4 mb-3">Background</h3>
+
+    <div class="my-2">
+      <label for="placeOfBirth" class="form-label mt-lg-3">Place of Birth</label>
+      <input type="text" class="form-control" name="placeOfBirth" id="placeOfBirth"
+             placeholder="Place of birth" formControlName="placeOfBirth">
+    </div>
+
+    <div class="my-2">
+      <label for="firstAppearance" class="form-label mt-lg-3">First Appearance</label>
+      <input type="text" class="form-control" name="firstAppearance" id="firstAppearance"
+             placeholder="First appearance" formControlName="firstAppearance">
+    </div>
+
+    <div class="my-2">
+      <label for="occupation" class="form-label mt-lg-3">Occupation</label>
+      <input type="text" class="form-control" name="occupation" id="occupation"
+             placeholder="Occupation" formControlName="occupation">
+    </div>
+
+    <div class="my-2">
+      <label for="base" class="form-label mt-lg-3">Base</label>
+      <input type="text" class="form-control" name="base" id="base"
+             placeholder="Base of operations" formControlName="base">
+    </div>
+
+    <!-- Image -->
+    <h3 class="mt-4 mb-3">Image</h3>
+
+    <div class="my-2">
+      <label for="imageUrl" class="form-label mt-lg-3">Image URL</label>
+      <input type="text" class="form-control" name="imageUrl" id="imageUrl"
+             placeholder="Image URL" formControlName="imageUrl">
+    </div>
+
+    <!-- PowerStats -->
+    <h3 class="mt-4 mb-3">Power Stats</h3>
+    <div formGroupName="powerStats">
+      <div class="row">
+        <div class="col-md-6 my-2">
+          <label for="intelligence" class="form-label mt-lg-3">Intelligence (0-100)</label>
+          <input type="number" class="form-control" name="intelligence" id="intelligence"
+                 placeholder="Intelligence" formControlName="intelligence" min="0" max="100">
+        </div>
+
+        <div class="col-md-6 my-2">
+          <label for="strength" class="form-label mt-lg-3">Strength (0-100)</label>
+          <input type="number" class="form-control" name="strength" id="strength"
+                 placeholder="Strength" formControlName="strength" min="0" max="100">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 my-2">
+          <label for="speed" class="form-label mt-lg-3">Speed (0-100)</label>
+          <input type="number" class="form-control" name="speed" id="speed"
+                 placeholder="Speed" formControlName="speed" min="0" max="100">
+        </div>
+
+        <div class="col-md-6 my-2">
+          <label for="durability" class="form-label mt-lg-3">Durability (0-100)</label>
+          <input type="number" class="form-control" name="durability" id="durability"
+                 placeholder="Durability" formControlName="durability" min="0" max="100">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 my-2">
+          <label for="power" class="form-label mt-lg-3">Power (0-100)</label>
+          <input type="number" class="form-control" name="power" id="power"
+                 placeholder="Power" formControlName="power" min="0" max="100">
+        </div>
+
+        <div class="col-md-6 my-2">
+          <label for="combat" class="form-label mt-lg-3">Combat (0-100)</label>
+          <input type="number" class="form-control" name="combat" id="combat"
+                 placeholder="Combat" formControlName="combat" min="0" max="100">
+        </div>
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-center gap-3">
+      <button type="submit" value="Save" class="btn btn-success mt-5"
+              [disabled]="!newCharacterForm.valid && isNew">Save</button>
+      <button type="button" class="btn btn-secondary mt-5"
+              >Cancel</button>
+    </div>
+  </form>
+</section>

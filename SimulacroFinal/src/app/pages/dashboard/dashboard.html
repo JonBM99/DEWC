@@ -1,0 +1,46 @@
+<div class="container-fluid">
+  <div class="row">
+
+    <!-- Toggle sidebar en móviles -->
+    <div class="d-lg-none p-2">
+      <button class="btn btn-primary" (click)="toggleSidebar()">
+        ☰ Menu
+      </button>
+    </div>
+
+    <!-- Sidebar -->
+    <nav
+      class="sidebar bg-light"
+      [class.open]="sidebarOpen"
+      [class.closed]="!sidebarOpen && isMobile"
+    >
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a
+            [routerLink]="['users']"
+            routerLinkActive="active"
+            class="nav-link"
+            (click)="closeOnMobile()"
+          >
+            Ver Usuarios
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            [routerLink]="['user-form']"
+            routerLinkActive="active"
+            class="nav-link"
+            (click)="closeOnMobile()"
+          >
+            Añadir Usuario
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Main content -->
+    <main class="main-content">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+</div>
