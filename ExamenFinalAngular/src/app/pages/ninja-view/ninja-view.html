@@ -1,0 +1,97 @@
+<section class="container mt-5 align-items-center d-flex justify-content-center">
+  <div class="card shadow-sm border rounded" style="width: fit-content;">
+    <div class="row g-2 align-items-center">
+      <div id="carouselExample" class="carousel slide">
+      <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img [src]="ninja.image1" class="img-fluid rounded" alt="Imagen de {{ninja.ninjaname}}">
+          </div>
+          <div class="carousel-item">
+            <img [src]="ninja.image2" class="img-fluid rounded" alt="Imagen 2 de {{ninja.ninjaname}}">
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Siguiente</span>
+        </button>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <div class="mb-3">
+          <label class="form-label fw-bold">Genjutsu</label>
+            <div class="progress">
+              <div class="progress-bar bg-danger" role="progressbar" [style.width.%]="ninja.stats">
+                {{ninja.stats}}%
+              </div>
+            </div>
+          </div>
+          <div class="mb-3">
+          <label class="form-label fw-bold">Velocidad de sellos</label>
+            <div class="progress">
+              <div class="progress-bar bg-danger" role="progressbar" [style.width.%]="ninja.stats">
+                {{ninja.stats}}%
+              </div>
+            </div>
+          </div>
+          <div class="mb-3">
+          <label class="form-label fw-bold">Intelligencia</label>
+            <div class="progress">
+              <div class="progress-bar bg-danger" role="progressbar" [style.width.%]="ninja.stats">
+                {{ninja.stats}}%
+              </div>
+            </div>
+          </div>
+          <div class="mb-3">
+          <label class="form-label fw-bold">Ninjutsu</label>
+            <div class="progress">
+              <div class="progress-bar bg-danger" role="progressbar" [style.width.%]="ninja.stats">
+                {{ninja.stats}}%
+              </div>
+            </div>
+          </div>
+          <div class="mb-3">
+          <label class="form-label fw-bold">Velocidad</label>
+            <div class="progress">
+              <div class="progress-bar bg-danger" role="progressbar" [style.width.%]="ninja.stats">
+                {{ninja.stats}}%
+              </div>
+            </div>
+          </div>
+          <div class="mb-3">
+          <label class="form-label fw-bold">Estamina</label>
+            <div class="progress">
+              <div class="progress-bar bg-danger" role="progressbar" [style.width.%]="ninja.stats">
+                {{ninja.stats}}%
+              </div>
+            </div>
+          </div>
+          <div class="mb-3">
+          <label class="form-label fw-bold">Fuerza</label>
+            <div class="progress">
+              <div class="progress-bar bg-danger" role="progressbar" [style.width.%]="ninja.stats">
+                {{ninja.stats}}%
+              </div>
+            </div>
+          </div>
+          <div class="mb-3">
+          <label class="form-label fw-bold">Taijutsu</label>
+            <div class="progress">
+              <div class="progress-bar bg-danger" role="progressbar" [style.width.%]="ninja.stats">
+                {{ninja.stats}}%
+              </div>
+            </div>
+          </div>
+
+
+          <div class="d-flex justify-content-around mt-4">
+            <a [routerLink]="['../../ninja']"><i class="bi bi-arrow-left"></i></a>
+            <a [routerLink]="['../../ninja-form', ninja.id]"><i class="bi bi-pencil-square"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

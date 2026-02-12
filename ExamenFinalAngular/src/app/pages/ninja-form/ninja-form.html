@@ -1,0 +1,250 @@
+<section class="container my-3">
+  @if (isNew) {
+    <h1 class="text-center mb-4">Añade nuevo ninja</h1>
+  }
+  @else {
+    <h1 class="text-center mb-4">Edita un ninja</h1>
+  }
+  <hr>
+  <form [formGroup]="newNinjaForm" class="card p-3" (ngSubmit)="getDataForm()">
+    <div class="my-2">
+    <label for="ninjaname" class="form-label mt-lg-3">Nombre de ninja</label>
+      <input type="text" class="form-control" name="ninjaname" id="ninjaname" placeholder="ninjaname" formControlName="ninjaname">
+        @if(checkControl('ninjaname','required')){
+          <p class="error">Campo requerido</p>
+        }
+        @if(checkControl('ninjaname','minlength')){
+          <p class="error">Longitud minima 3 caracteres</p>
+        }
+    </div>
+
+    <div class="my-2">
+    <label for="affiliation" class="form-label mt-lg-3">Afiliciación</label>
+      <input type="text" class="form-control" name="affiliation" id="affiliation" placeholder="affiliation" formControlName="affiliation">
+      @if(checkControl('affiliation','required')){
+        <p class="error">Campo requerido</p>
+      }
+      @if(checkControl('affiliation','minlength')){
+        <p class="error">Longitud minima 3 caracteres</p>
+      }
+    </div>
+
+    <div class="my-2">
+    <label for="clan" class="form-label mt-lg-3">Clan</label>
+      <input type="text" class="form-control" name="clan" id="clan" placeholder="clan" formControlName="clan">
+        @if(checkControl('clan','required')){
+          <p class="error">Campo requerido</p>
+        }
+
+        @if(checkControl('clan','minlength')){
+          <p class="error">Longitud minima 3 caracteres</p>
+        }
+    </div>
+
+    <div class="my-2">
+    <label for="fullname" class="form-label mt-lg-3">Nombre real</label>
+      <input type="text" class="form-control" name="fullname" id="fullname" placeholder="fullname" formControlName="fullname">
+    @if(checkControl('fullname','required')){
+          <p class="error">Campo requerido</p>
+        }
+
+        @if(checkControl('fullname','minlength')){
+          <p class="error">Longitud minima 3 caracteres</p>
+        }
+    </div>
+
+    <div class="my-2">
+    <label for="gender" class="form-label mt-lg-3">Genero</label>
+      <input type="text" class="form-control" name="gender" id="gender" placeholder="gender" formControlName="gender">
+    @if(checkControl('gender','required')){
+          <p class="error">Campo requerido</p>
+        }
+
+        @if(checkControl('gender','minlength')){
+          <p class="error">Longitud minima 3 caracteres</p>
+        }
+    </div>
+
+    <div class="my-2">
+    <label for="image1" class="form-label mt-lg-3">Link de la primera imagen</label>
+      <input type="text" class="form-control" name="image1" id="image1" placeholder="image1" formControlName="image1">
+    @if(checkControl('image1','required')){
+          <p class="error">Campo requerido</p>
+        }
+
+        @if(checkControl('image1','minlength')){
+          <p class="error">Longitud minima 3 caracteres</p>
+        }
+    </div>
+
+    <div class="my-2">
+    <label for="image2" class="form-label mt-lg-3">Link de la segunda imagen</label>
+      <input type="text" class="form-control" name="image2" id="image2" placeholder="image2" formControlName="image2">
+    @if(checkControl('image2','required')){
+          <p class="error">Campo requerido</p>
+        }
+
+        @if(checkControl('image2','minlength')){
+          <p class="error">Longitud minima 3 caracteres</p>
+        }
+    </div>
+
+    <div class="my-2">
+    <label for="level" class="form-label mt-lg-3">Rango</label>
+      <input type="text" class="form-control" name="level" id="level" placeholder="level" formControlName="level">
+    @if(checkControl('level','required')){
+          <p class="error">Campo requerido</p>
+        }
+
+        @if(checkControl('level','minlength')){
+          <p class="error">Longitud minima 3 caracteres</p>
+        }
+    </div>
+
+    <div class="my-2">
+    <label for="naturetype" class="form-label mt-lg-3">Naturaleza</label>
+      <input type="text" class="form-control" name="naturetype" id="naturetype" placeholder="naturetype" formControlName="naturetype">
+    @if(checkControl('naturetype','required')){
+          <p class="error">Campo requerido</p>
+        }
+
+        @if(checkControl('naturetype','minlength')){
+          <p class="error">Longitud minima 3 caracteres</p>
+        }
+    </div>
+
+
+    <h3 class="mt-4 mb-3">Estadísticas</h3>
+    <div formGroupName="stats">
+      <div class="row">
+        <div class="col-md-6 my-2">
+          <label for="genjutsu" class="form-label mt-lg-3">Genjutsu (0-100)</label>
+          <input type="number" class="form-control" name="genjutsu" id="genjutsu"
+                 placeholder="genjutsu" formControlName="genjutsu" min="0" max="100">
+        @if(checkControl('genjutsu','required')){
+          <p class="error">Campo requerido</p>
+        }
+        @if(checkControl('genjustsu','min')){
+            <p class="error">Valor minimo 0</p>
+            }
+            @if(checkControl('genjustsu','max')){
+            <p class="error">Valor maximo 100</p>
+            }
+      </div>
+
+        <div class="col-md-6 my-2">
+          <label for="handseals" class="form-label mt-lg-3">Velocidad de sellos (0-100)</label>
+          <input type="number" class="form-control" name="handseals" id="handseals"
+                 placeholder="handseals" formControlName="handseals" min="0" max="100">
+        </div>
+        @if(checkControl('handseals','required')){
+          <p class="error">Campo requerido</p>
+        }
+         @if(checkControl('handseals','min')){
+            <p class="error">Valor minimo 0</p>
+            }
+            @if(checkControl('handseals','max')){
+            <p class="error">Valor maximo 100</p>
+            }
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 my-2">
+          <label for="intelligence" class="form-label mt-lg-3">Inteligencia (0-100)</label>
+          <input type="number" class="form-control" name="intelligence" id="intelligence"
+                 placeholder="intelligence" formControlName="intelligence" min="0" max="100">
+        @if(checkControl('intelligence','required')){
+          <p class="error">Campo requerido</p>
+        }
+        @if(checkControl('intelligence','min')){
+            <p class="error">Valor minimo 0</p>
+            }
+            @if(checkControl('intelligence','max')){
+            <p class="error">Valor maximo 100</p>
+            }
+      </div>
+
+        <div class="col-md-6 my-2">
+          <label for="ninjutsu" class="form-label mt-lg-3">Ninjutsu (0-100)</label>
+          <input type="number" class="form-control" name="ninjutsu" id="ninjutsu"
+                 placeholder="ninjutsu" formControlName="ninjutsu" min="0" max="100">
+        </div>
+        @if(checkControl('ninjutsu','required')){
+          <p class="error">Campo requerido</p>
+        }
+        @if(checkControl('ninjutsu','min')){
+            <p class="error">Valor minimo 0</p>
+            }
+            @if(checkControl('ninjutsu','max')){
+            <p class="error">Valor maximo 100</p>
+            }
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 my-2">
+          <label for="speed" class="form-label mt-lg-3">Velocidad (0-100)</label>
+          <input type="number" class="form-control" name="speed" id="speed"
+                 placeholder="speed" formControlName="speed" min="0" max="100">
+        @if(checkControl('speed','required')){
+          <p class="error">Campo requerido</p>
+        }
+        @if(checkControl('speed','min')){
+            <p class="error">Valor minimo 0</p>
+            }
+            @if(checkControl('speed','max')){
+            <p class="error">Valor maximo 100</p>
+            }
+                </div>
+
+        <div class="col-md-6 my-2">
+          <label for="stamina" class="form-label mt-lg-3">Estamina (0-100)</label>
+          <input type="number" class="form-control" name="stamina" id="stamina"
+                 placeholder="stamina" formControlName="stamina" min="0" max="100">
+        @if(checkControl('stamina','required')){
+          <p class="error">Campo requerido</p>
+        }
+        @if(checkControl('stamina','min')){
+            <p class="error">Valor minimo 0</p>
+            }
+            @if(checkControl('stamina','max')){
+            <p class="error">Valor maximo 100</p>
+            }
+                </div>
+
+        <div class="col-md-6 my-2">
+          <label for="strength" class="form-label mt-lg-3">Fuerza (0-100)</label>
+          <input type="number" class="form-control" name="strength" id="strength"
+                 placeholder="strength" formControlName="strength" min="0" max="100">
+        @if(checkControl('strength','required')){
+          <p class="error">Campo requerido</p>
+        }
+        @if(checkControl('strength','min')){
+            <p class="error">Valor minimo 0</p>
+            }
+            @if(checkControl('strength','max')){
+            <p class="error">Valor maximo 100</p>
+            }
+                </div>
+
+        <div class="col-md-6 my-2">
+          <label for="taijutsu" class="form-label mt-lg-3">Taijutsu (0-100)</label>
+          <input type="number" class="form-control" name="taijutsu" id="taijutsu"
+                 placeholder="taijutsu" formControlName="taijutsu" min="0" max="100">
+        @if(checkControl('taijutsu','required')){
+          <p class="error">Campo requerido</p>
+        }
+        @if(checkControl('taijutsu','min')){
+            <p class="error">Valor minimo 0</p>
+            }
+            @if(checkControl('taijutsu','max')){
+            <p class="error">Valor maximo 100</p>
+            }
+                </div>
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-center gap-3">
+      <button type="submit" value="Save" class="btn btn-success mt-5" [disabled]="!newNinjaForm.valid && isNew">Guardar</button>
+      <button class="btn btn-secondary mt-5" [routerLink]="['../../']">Cancelar</button>
+    </div>
+  </form>
